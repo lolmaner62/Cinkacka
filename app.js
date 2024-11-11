@@ -10,36 +10,35 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-function GetCityTemp(cityname, id) 
-{
-    var key = "12bc968c7cf2cfd90204032dfbf03cc6";
-
-    fetch("https://api.openweathermap.org/data/2.5/weather?q=" + cityname + "&appid=" + key + "&units=metric")
-    .then(function(resp) {return resp.json()})
-    .then(function(data)
-    {
-        console.log(data);
-        if (data.cod == 200) {
-            document.getElementById(id).textContent = data.name + ": " + data.main.temp + " C"
-        }
-    })
-    .catch(function(error){ console.log("Error: " + error)});
+function getRandomZnak(zasobnik_znaku) {
+    const num = Math.floor( Math.random() * zasobnik_znaku.length - 1);
+    return zasobnik_znaku[num];
 }
 
-window.onload = function()
-{
-    const city1 = "Jihlava";
-    const city2 = "Větrný Jeníkov";
-    var data2 = GetCityTemp(city1, "jihlava");
-    var data3 = GetCityTemp(city2, "Jenikov");
-};
 
 
 
-function getUserCityTemp() 
-{
-    const input_city = document.getElementById("input_city").value;   
-    var data1 = GetCityTemp(input_city, "city");
+
+function Roztoc() {
+    let zasobnik = ["🐒​", "👨‍👨‍👦​", "👩‍🦼​", "🍑​", "​🍆"];
+    const refresh_rate1 = 100;
+    const refresh_rate2 = 200;
+    const refresh_rate3 = 300;
+
     
-
+    for (let i = 0; i < 20000; i++) {
+        if(i % refresh_rate1 == 0)
+        {
+            document.getElementById("first").textContent = getRandomZnak(zasobnik);
+        }
+        if(i % refresh_rate2 == 0)
+        {
+                document.getElementById("second").textContent = getRandomZnak(zasobnik);
+        }
+        if(i % refresh_rate3 == 0)
+        {
+                document.getElementById("third").textContent = getRandomZnak(zasobnik);
+        }
+        
+    }
 }

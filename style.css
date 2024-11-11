@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#kotouce{
+    display: flex;
+    justify-content: center;
+    gap:   20;
+}
+
+hr {
+    margin: 20px 10px 10px 10px;
+}
+
+input, button {
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+}
