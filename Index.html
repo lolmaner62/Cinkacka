@@ -10,7 +10,7 @@
     <script src="app.js"></script>
 </head>
 <body>
-    <div id="tocka">
+    <div id="tocka" class="page_visible">
         <h1>Gamba</h1>
         <div id="kotouce">
             <div id="first">🐒​</div>
@@ -21,6 +21,21 @@
         <form>
             <button type="button" onclick="Roztoc()">Spin</button>
         </form>
+        <form>
+            <label for="sazka">Sázka</label>
+            
+            <input type="number" name="sazka" id="sazka">
+        </form>
+        <div id="vyhra" hidden="true">Vyhral si</div>
     </div>
+    <div id="Nastaveni" class="page">
+        strana 2
+
+
+    </div>
+    <button  type="button" id="stranka2" onclick="ZmenStranu2()">Nastaveni</button>
+    <button  type="button" id="stranka1" onclick="ZmenStranu1()">Tocka</button>
+
+
 </body>
 </html>

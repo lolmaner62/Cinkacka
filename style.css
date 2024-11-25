@@ -8,6 +8,7 @@ body {
     display: flex;
     justify-content: center;
     gap:   20;
+    
 }
 
 hr {
@@ -18,4 +19,10 @@ input, button {
     width: 80%;
     margin: 10px auto;
     padding: 10px;
+}
+.page_visible{
+    display: block;
+}
+.page{
+    display: none;
 }

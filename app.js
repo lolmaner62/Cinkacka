@@ -11,20 +11,27 @@ if ('serviceWorker' in navigator) {
 }
 
 function getRandomZnak(zasobnik_znaku) {
-    const num = Math.floor( Math.random() * zasobnik_znaku.length - 1);
+    const num = Math.floor( Math.random() * zasobnik_znaku.length );
     return zasobnik_znaku[num];
 }
+function ZmenStranu1() {
+    document.getElementById("tocka").className = "page_visible"
+    document.getElementById("Nastaveni").className = "page"
 
+}
+function ZmenStranu2() {
+    document.getElementById("tocka").className = "page"
+    document.getElementById("Nastaveni").className = "page_visible"
 
-
-
+}
 
 function Roztoc() {
     let zasobnik = ["🐒​", "👨‍👨‍👦​", "👩‍🦼​", "🍑​", "​🍆"];
     const refresh_rate1 = 100;
     const refresh_rate2 = 200;
     const refresh_rate3 = 300;
-
+    const sazka = document.getElementById("sazka").value;
+    document.getElementById("vyhra").hidden = true;
     
     for (let i = 0; i < 20000; i++) {
         if(i % refresh_rate1 == 0)
@@ -41,4 +48,12 @@ function Roztoc() {
         }
         
     }
+    let a =  document.getElementById("first").textContent;
+    let b =   document.getElementById("second").textContent;
+    let c =  document.getElementById("third").textContent;
+    if (a == b && b == c) {
+        const vyhra =  (1/Math.pow((1 / zasobnik.length), 3 ) * 0,75);
+        document.getElementById("vyhra").hidden = false;
+        document.getElementById("vyhra").textContent = "Vyhral si " + vyhra;
+        }
 }
